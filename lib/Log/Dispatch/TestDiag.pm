@@ -63,7 +63,7 @@ Graham TerMarsch (cpan@howlingfrog.com)
 
 =head1 COPYRIGHT
 
-Copyright (C) 2011, Graham TerMArsch.  All Rights Reserved.
+Copyright (C) 2011, Graham TerMarsch.  All Rights Reserved.
 
 This is free software, you can redistribute it and/or modify it under the
 Artistic-2.0 license.
