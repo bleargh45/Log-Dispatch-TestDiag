@@ -4,7 +4,7 @@
       "Graham TerMarsch (cpan@howlingfrog.com)"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "artistic_2"
    ],
@@ -21,15 +21,15 @@
       },
       "runtime" : {
          "requires" : {
-            "Log::Dispatch::Output" : 0,
-            "Test::More" : 0
+            "Log::Dispatch::Output" : "0",
+            "Test::More" : "0"
          }
       }
    },
    "provides" : {
       "Log::Dispatch::TestDiag" : {
          "file" : "lib/Log/Dispatch/TestDiag.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -38,5 +38,5 @@
          "http://opensource.org/licenses/artistic-license-2.0.php"
       ]
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
