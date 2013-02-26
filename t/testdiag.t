@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 3;
+use Test::More tests => 4;
 use Log::Dispatch;
 use Log::Dispatch::TestDiag;
 
@@ -49,4 +49,30 @@ logging_test: {
     );
     is_deeply \@entries, \@expected,
         'Entries logged as expected via Test::More::diag';
+}
+
+###############################################################################
+# Logging test, via "note"
+logging_test_via_note: {
+    my $logger = Log::Dispatch->new(
+        outputs => [ ['TestDiag', min_level=>'info', as_note=>1] ],
+    );
+
+    # Over-ride Test::More::note() so we can capture test output
+    my @entries;
+    no warnings 'redefine';
+    local *Test::More::note = sub { push @entries, shift };
+
+    # Send some log messages
+    $logger->info("info gets logged");
+    $logger->debug("debug does not");
+    $logger->warning("warning gets logged");
+
+    # Verify that they got logged via (our over-ridden) Test::More::note()
+    my @expected = (
+        "info gets logged",
+        "warning gets logged",
+    );
+    is_deeply \@entries, \@expected,
+        'Entries logged as expected via Test::More::note';
 }
