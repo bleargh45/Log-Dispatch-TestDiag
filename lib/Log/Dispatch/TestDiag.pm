@@ -5,7 +5,7 @@ use warnings;
 use base qw(Log::Dispatch::Output);
 use Test::More qw();
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub new {
     my $proto = shift;
