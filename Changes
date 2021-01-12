@@ -1,6 +1,8 @@
 Revision history for Perl extension Log::Dispatch::TestDiag.
 
 {{$NEXT}}
+
+0.03      2021-01-12 10:15:21-08:00 America/Vancouver
     - Switch to Dist::Zilla for release management.
     - Update test suite to use sub-tests.
     - Move to GitHub
