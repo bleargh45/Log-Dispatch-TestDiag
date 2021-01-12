@@ -2,32 +2,32 @@
 
 use strict;
 use warnings;
-use Test::More tests => 4;
+use Test::More;
 use Log::Dispatch;
 use Log::Dispatch::TestDiag;
 
 ###############################################################################
 # Instantiation.
-instantiation: {
+subtest 'Instantiation' => sub {
     my $output = Log::Dispatch::TestDiag->new(
         name      => 'diag',
         min_level => 'debug',
     );
     isa_ok $output, 'Log::Dispatch::TestDiag';
-}
+};
 
 ###############################################################################
 # Instantiation via Log::Dispatch->new
-instantiation_via_log_dispatch: {
+subtest 'Instantiation, via Log::Dispatch' => sub {
     my $logger = Log::Dispatch->new(
         outputs => [ ['TestDiag', min_level=>'debug'] ],
     );
     isa_ok $logger, 'Log::Dispatch';
-}
+};
 
 ###############################################################################
 # Logging test
-logging_test: {
+subtest 'Logging' => sub {
     my $logger = Log::Dispatch->new(
         outputs => [ ['TestDiag', min_level=>'info'] ],
     );
@@ -49,11 +49,11 @@ logging_test: {
     );
     is_deeply \@entries, \@expected,
         'Entries logged as expected via Test::More::diag';
-}
+};
 
 ###############################################################################
 # Logging test, via "note"
-logging_test_via_note: {
+subtest 'Logging, via "note"' => sub {
     my $logger = Log::Dispatch->new(
         outputs => [ ['TestDiag', min_level=>'info', as_note=>1] ],
     );
@@ -75,4 +75,7 @@ logging_test_via_note: {
     );
     is_deeply \@entries, \@expected,
         'Entries logged as expected via Test::More::note';
-}
+};
+
+###############################################################################
+done_testing();
