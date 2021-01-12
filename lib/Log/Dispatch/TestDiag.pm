@@ -82,6 +82,10 @@ Artistic-2.0 license.
 
 =head1 SEE ALSO
 
-L<Log::Dispatch>.
+=over
+
+=item L<Log::Dispatch>
+
+=back
 
 =cut

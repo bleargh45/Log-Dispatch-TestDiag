@@ -48,4 +48,4 @@ Artistic-2.0 license.
 
 # SEE ALSO
 
-[Log::Dispatch](https://metacpan.org/pod/Log%3A%3ADispatch).
+- [Log::Dispatch](https://metacpan.org/pod/Log%3A%3ADispatch)
